@@ -22,7 +22,7 @@
 <P><B>Q:</B> <B>CVoiceControl rejects too many utterances. What can I do?</B>
 <P><B>Q:</B> <B>How can I make sure my sound card and sound driver work properly?</B>
 <P><B>Q:</B> <B><EM>Configure</EM>, <EM>make</EM> and <EM>make install</EM> work fine,
-but when I try to launch <EM>microphone_config</EM> it just exits with
+but when I try to launch <EM>cvc_microphone_config</EM> it just exits with
 <CODE>Segmentation Fault</CODE>. What can I do?</B>
 <P>
 <P>
@@ -126,16 +126,16 @@ Now you can play the recorded stuff on the audio device by typing
 If not, oops! (contact me)
 <P>
 <P><B>Q:</B> <B><EM>Configure</EM>, <EM>make</EM> and <EM>make install</EM> work fine,
-but when I try to launch <EM>microphone_config</EM> it just exits with
+but when I try to launch <EM>cvc_microphone_config</EM> it just exits with
 <CODE>Segmentation Fault</CODE>. What can I do?</B>
 <P>
 <P><B>A:</B> Most probably a wrong version of the NCurses library is loaded
 at runtime.
-Microphone_config is compiled with version 5 of NCurses. The following
+Cvc_microphone_config is compiled with version 5 of NCurses. The following
 instructions may help to solve this problem. Open a console and type:
 <BLOCKQUOTE><CODE>
 <PRE>
-  % ldd microphone_config
+  % ldd cvc_microphone_config
 </PRE>
 </CODE></BLOCKQUOTE>
 
@@ -178,7 +178,7 @@ to the right version of <CODE>libncurses</CODE>:
 </PRE>
 </CODE></BLOCKQUOTE>
 
-<EM>Microphone_config</EM> should work ok now.
+<EM>Cvc_microphone_config</EM> should work ok now.
 <B>Hint:</B> If you are unsure about what you are doing here, please
 consult a Unix expert about it. <B>You don't want to mess with the
 libraries!</B>

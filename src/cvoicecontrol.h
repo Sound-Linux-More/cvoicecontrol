@@ -43,64 +43,6 @@
  *
  */
 
-/********************************************************************************
- * recognizer variables
- ********************************************************************************
- *
- *
- * width of the diagonal window in the DTW matrix that the
- *  evaluation is limited to.
- * This is used to reduce the number of DTW matrix elements
- *  that need to be calculated
- *            _________________________
- *           |                  *     .|    \
- *           |               *     .   |     |
- *           |            *     .     *|     |
- *           |         *<-w->.     *   |     |
- * reference |      *     .     *      |      > DTW-Matrix
- *           |   *     .     *         |     |
- *           |*     .<-w->*            |     |
- *           |   .     *               |     |
- *           |._____*__________________|    /
- *                    sample
- *
- *       Legend:  w = adjust_window_width
- */
-int adjust_window_width;
-
-/*
- * strictly speaking, time-alignment in the DTW matrix starts
- *  in the bottom left corner.
- * This value allows alignment to start up to `sloppy_corner`
- *  elements away from the corner
- *            _____ ... ____            _____ ... ____
- *          r|o             |          |o             |    \
- *          e|o             |          |o             |     |
- *          f|o             |          |o             |     |
- *          e|o             | -------> |o             |     |
- * sloppy_  r|o     ...     | sloppy_  |o     ...     |      > DTW-Matrix
- *  corner  e|o             |  corner  |o             |     |
- *  = 0     n|o             |  = 3     |x             |     |
- *          c|o             |          |x             |     |
- *          e|xoooo ... oooo|          |xxxoo ... oooo|    /
- *                sample                    sample
- *
- *    Legend: x = distance value,  o = (infinity)
- */
-int sloppy_corner;
-
-/*****
-  time alignment scores must stay below this value
-  otherwise the according samples are ignored in
-  the further evaluation process
-  *****/
-float score_threshold;
-
-/*****
-  a (very high) float value that is considered "infinity"
-  *****/
-float float_max;
-
 /***** these macros are used in the DTW warping function
   to calculate the maximum/minimum of two or three
   variables

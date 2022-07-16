@@ -22,14 +22,14 @@
 <P>CVoiceControl consists of three executables:
 <P>
 <UL>
-<LI><CODE>microphone_config</CODE></LI>
-<LI><CODE>model_editor</CODE></LI>
+<LI><CODE>cvc_microphone_config</CODE></LI>
+<LI><CODE>cvc_model_editor</CODE></LI>
 <LI><CODE>cvoicecontrol</CODE></LI>
 </UL>
 <P>First of all, you have to calibrate your microphone to use it
-for speech recognition. Use <CODE>microphone_config</CODE> to
+for speech recognition. Use <CODE>cvc_microphone_config</CODE> to
 do this. When your sound hardware is prepared
-you can use <CODE>model_editor</CODE> to create speaker models.
+you can use <CODE>cvc_model_editor</CODE> to create speaker models.
 These are the main objects needed for the speech recognition
 process.
 <CODE>cvoicecontrol</CODE> is the actual speech recognition program.
@@ -41,11 +41,11 @@ Also the structure of the speaker models will be described more closely.
 </H2>
 
 <P>
-<P><CODE>Microphone_config</CODE> must be started by entering the
+<P><CODE>Cvc_microphone_config</CODE> must be started by entering the
 command
 <BLOCKQUOTE><CODE>
 <PRE>
-% microphone_config
+% cvc_microphone_config
 </PRE>
 </CODE></BLOCKQUOTE>
 
@@ -72,7 +72,7 @@ run at this time is not displayed at all.
 <LI><CODE>Estimate Characteristics of Recording Channel</CODE></LI>
 </UL>
 <P>
-<P>If <CODE>microphone_config</CODE> managed to detect your audio hardware
+<P>If <CODE>cvc_microphone_config</CODE> managed to detect your audio hardware
 automatically the first two steps (<CODE>Select Mixer Device</CODE> and
 <CODE>Select Audio Device</CODE>) are displayed in bold, i.e. marked as
 ``completed successfully''. (The selected device files are displayed
@@ -149,7 +149,7 @@ reference item will be chosen as recognition result.
 <P>To launch the speaker model editor open a console and type:
 <BLOCKQUOTE><CODE>
 <PRE>
-% model_editor
+% cvc_model_editor
 </PRE>
 </CODE></BLOCKQUOTE>
 <P>From the main menu of the editor you can reset the current speaker

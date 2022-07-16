@@ -114,7 +114,7 @@ char *dataStart( char *s )
  * load configuration
  ********************************************************************************/
 
-int loadConfiguration(  )
+int loadConfiguration(float *score_threshold)
 {
   /***** load configuration */
 
@@ -139,7 +139,7 @@ int loadConfiguration(  )
     if( ( f = fopen( config_file, "r" ) ) == NULL )
     {
         fprintf( stderr, "Failed to read config file: %s\n", config_file );
-        fprintf( stderr, "Please run 'microphone_config' first!\n" );
+        fprintf( stderr, "Please run 'cvc_microphone_config' first!\n" );
         return 0;
     }
     else
@@ -152,7 +152,7 @@ int loadConfiguration(  )
 
         /* set default values here! */
 
-        score_threshold = 18;
+        *score_threshold = 18.0f;
         rec_level = stop_level = silence_level = 0;
 
         while( fgets( s, l, f ) != NULL )

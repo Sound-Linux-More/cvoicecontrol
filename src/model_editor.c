@@ -738,10 +738,11 @@ int main(int argc, char *argv[])
 
   WINDOW *mainscr; /***** ncurses related variables */
   int i, j;
+  float score_threshold = 0.0f;
 
   /***** load configuration */
 
-  if (loadConfiguration() == 0)
+  if (loadConfiguration(&score_threshold) == 0)
   {
     fprintf(stderr, "couldn't load configuration!");
     exit(-1);

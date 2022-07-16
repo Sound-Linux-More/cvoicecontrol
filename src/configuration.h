@@ -19,7 +19,7 @@
 #define CONFIGURATION_H
 
 int mkpath( const char * path, mode_t mode );
-int loadConfiguration();
+int loadConfiguration(float*);
 
 #define CONFIG_DIR	"~/.config/cvoicecontrol"
 #define CONFIG_FILE	"config"
